@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  ocrmypdf-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ocrmypdf-web
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/tmp
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TESSDATA_PREFIX=/usr/share/tessdata
+      - MAX_CONTENT_LENGTH=500000000  # 设置最大文件大小为500MB
+    networks:
+      - ocr-network
+    # 设置资源限制
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+
+networks:
+  ocr-network:
+    driver: bridge

@@ -1,2 +1,3 @@
-streamlit==1.21.0
-ocrmypdf==12.7.2
+streamlit==1.30.0
+watchdog
+pillow
