@@ -18,6 +18,14 @@ docker-compose up -d
 ```
 在浏览器中打开 `http://127.0.0.1:5000` 即可；
 
+## 其他
+
+1. 基于 [ocrmypdf/OCRmyPDF](https://github.com/ocrmypdf/OCRmyPDF) 的容器 `jbarlow83/ocrmypdf-alpine`；
+
+2. 语言包来源于 [tesseract-ocr/tessdata_best: Best (most accurate) trained LSTM models.](https://github.com/tesseract-ocr/tessdata_best)；
+
+
+
 ---
 ---
 ---

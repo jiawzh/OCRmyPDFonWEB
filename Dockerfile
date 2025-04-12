@@ -36,8 +36,9 @@ RUN /app/venv/bin/pip install --no-cache-dir flask flask-bootstrap pillow watchd
 
 # Copy language files
 ENV TESSDATA_PREFIX=/usr/share/tessdata
-COPY chi_sim_vert.traineddata /usr/share/tessdata/chi_sim_vert.traineddata
-COPY eng.traineddata /usr/share/tessdata/eng.traineddata
+COPY ./traineddata/chi_sim_vert.traineddata /usr/share/tessdata/chi_sim_vert.traineddata
+COPY ./traineddata/chi_sim.traineddata /usr/share/tessdata/chi_sim.traineddata
+COPY ./traineddata/eng.traineddata /usr/share/tessdata/eng.traineddata
 
 # Copy application code
 COPY server.py /app/

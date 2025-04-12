@@ -286,9 +286,9 @@ def index():
                             <div class="form-group">
                                 <label for="language">识别语言</label>
                                 <select id="language" name="language">
+                                    <option value="eng+chi_sim">英语+简体中文</option>
                                     <option value="eng">英语</option>
                                     <option value="chi_sim">简体中文</option>
-                                    <option value="eng+chi_sim">英语+简体中文</option>
                                     <option value="chi_sim_vert">简体中文垂直文本</option>
                                 </select>
                             </div>
@@ -352,9 +352,9 @@ def index():
                             <div class="form-group">
                                 <label for="language_ex">识别语言</label>
                                 <select id="language_ex" name="language">
+                                    <option value="eng+chi_sim">英语+简体中文</option>
                                     <option value="eng">英语</option>
                                     <option value="chi_sim">简体中文</option>
-                                    <option value="eng+chi_sim">英语+简体中文</option>
                                     <option value="chi_sim_vert">简体中文垂直文本</option>
                                 </select>
                             </div>
