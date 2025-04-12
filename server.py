@@ -10,7 +10,8 @@ from werkzeug.utils import secure_filename
 
 # 配置日志 - 增强日志设置，确保信息被打印出来
 logging.basicConfig(
-    level=logging.DEBUG,  # 修改为DEBUG级别以显示更多日志
+    # level=logging.DEBUG,  # 修改为DEBUG级别以显示更多日志
+    level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler("ocrmypdf.log"),
@@ -54,7 +55,7 @@ def process_pdf_file(input_path, options):
         
         # 获取OCR选项
         ocr_enabled = options.get('ocr_enabled', True)
-        language = options.get('language', 'eng')
+        language = options.get('language', 'eng+chi_sim')
         deskew = options.get('deskew', False)
         optimize_level = options.get('optimize_level', 1)
         rotate_pages = options.get('rotate_pages', False)
@@ -511,7 +512,7 @@ def upload_file():
     # 收集处理选项
     options = {
         'ocr_enabled': 'ocr_enabled' in request.form,
-        'language': request.form.get('language', 'eng'),
+        'language': request.form.get('language', 'eng+chi_sim'),
         'deskew': 'deskew' in request.form,
         'optimize_level': int(request.form.get('optimize_level', 1)),
         'rotate_pages': 'rotate_pages' in request.form,
@@ -624,7 +625,7 @@ def process_existing_file():
     # 收集处理选项
     options = {
         'ocr_enabled': 'ocr_enabled' in request.form,
-        'language': request.form.get('language', 'eng'),
+        'language': request.form.get('language', 'eng+chi_sim'),
         'deskew': 'deskew' in request.form,
         'optimize_level': int(request.form.get('optimize_level', 1)),
         'rotate_pages': 'rotate_pages' in request.form,

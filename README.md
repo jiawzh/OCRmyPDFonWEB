@@ -1,5 +1,27 @@
 # OCRmyPDFonWEB
 
+## 修改内容
+
+1. 使用 `GitHub Copilot Chat` 对代码进行了修改；
+
+2. 更新 `ocrmypdf` 版本；
+
+3. 使用 `flask` 替换 `streamlit`；
+
+4. 大文件可上传到 `uploads` 文件夹，在 `使用已有文件` 标签中直接选取；
+
+## 部署方法
+
+```bash
+docker-compose build --no-cache
+docker-compose up -d
+```
+在浏览器中打开 `http://127.0.0.1:5000` 即可；
+
+---
+---
+---
+
 Streamlit Web UI for OCRmyPDF. Its codebase is tiny, so if you want to modify it, it should be straightforward. It is also stateless, making it easy to deploy. No volumes. No configuration.
 
 ![screenshot](screenshot.png "Screenshot")
